@@ -1,0 +1,6 @@
+[submodule "extern/PHydrate"]
+	path = extern/PHydrate
+	url = git://github.com/PHydrate/PHydrate.git
+[submodule "extern/machine.specifications"]
+	path = extern/machine.specifications
+	url = git://github.com/stephen-czetty/machine.specifications.git

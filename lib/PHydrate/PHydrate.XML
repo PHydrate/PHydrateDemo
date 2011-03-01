@@ -1,0 +1,1057 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PHydrate</name>
+    </assembly>
+    <members>
+        <member name="T:PHydrate.Attributes.CreateUsingAttribute">
+            <summary>
+              Annotate a class with the stored procedure used to create a new record
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.CrudAttributeBase">
+            <summary>
+              Base class for all CRUD attributes
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.CrudAttributeBase.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.CrudAttributeBase"/> class.
+            </summary>
+            <param name="procedureName">Name of the procedure.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.CrudAttributeBase.ProcedureName">
+            <summary>
+              Gets or sets the procedure name.
+            </summary>
+            <value>The procedure name.</value>
+        </member>
+        <member name="M:PHydrate.Attributes.CreateUsingAttribute.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.CreateUsingAttribute"/> class.
+            </summary>
+            <param name="procedureName">Name of the procedure.</param>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapperFactory.CreateWrapper(System.Reflection.MemberInfo)">
+            <summary>
+            Creates the wrapper.
+            </summary>
+            <param name="memberInfo">The member info.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.PHydrateInternalException">
+            <summary>
+              An internal PHydrate exception.  This is probably due to a bug in the library itself
+            </summary>
+        </member>
+        <member name="T:PHydrate.PHydrateException">
+            <summary>
+              Base class for exceptions thrown by PHydrate
+            </summary>
+        </member>
+        <member name="M:PHydrate.PHydrateException.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.PHydrateException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:PHydrate.PHydrateException.#ctor(System.String,System.String[])">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.PHydrateException"/> class.
+            </summary>
+            <param name="formatString">The format string.</param>
+            <param name="formatValues">The format values.</param>
+        </member>
+        <member name="M:PHydrate.PHydrateInternalException.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.PHydrateInternalException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:PHydrate.PHydrateInternalException.#ctor(System.String,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.PHydrateInternalException"/> class.
+            </summary>
+            <param name="formatString">The format string.</param>
+            <param name="formatValues">The format values.</param>
+        </member>
+        <member name="T:PHydrate.Util.DataReaderExtensions">
+            <summary>
+            Extension methods on IDataReader.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.DataReaderExtensions.ToDictionary(System.Data.IDataReader)">
+            <summary>
+            Return an IDictionary of the current record of the IDataReader
+            </summary>
+            <param name="dataReader">The data reader.</param>
+            <returns>The record translated as an IDictionary</returns>
+        </member>
+        <member name="T:PHydrate.ISpecification`1">
+            <summary>
+            Base interface for specification types
+            </summary>
+            <remarks>
+            Nothing is implemented by this interface, it is simply necessary
+            to group other interfaces.
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:PHydrate.Core.SqlServerDatabaseService">
+            <summary>
+            MS Sql Server implementation of IDatabaseService
+            </summary>
+        </member>
+        <member name="T:PHydrate.Core.DatabaseServiceBase">
+            <summary>
+            Base implementation of IDatabaseService
+            </summary>
+        </member>
+        <member name="T:PHydrate.Core.IDatabaseService">
+            <summary>
+            Interface to the database.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Core.IDatabaseService.ExecuteStoredProcedureReader(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Executes a stored procedure.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="dataParameters">The data parameters.</param>
+            <returns>An IDataReader containing the results.</returns>
+        </member>
+        <member name="M:PHydrate.Core.IDatabaseService.ExecuteStoredProcedureReader(System.String)">
+            <summary>
+            Executes a stored procedure.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <returns>An IDataReader containing the results.</returns>
+        </member>
+        <member name="M:PHydrate.Core.IDatabaseService.ExecuteStoredProcedureScalar``1(System.String)">
+            <summary>
+            Executes the stored procedure, returning the first column of the first record.
+            </summary>
+            <typeparam name="T">The type to cast the return value to.</typeparam>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.IDatabaseService.ExecuteStoredProcedureScalar``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Executes the stored procedure scalar.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="dataParameters">The data parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.DatabaseServiceBase.ExecuteStoredProcedureReader(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Executes a stored procedure.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="dataParameters">The data parameters.</param>
+            <returns>An IDataReader containing the results.</returns>
+        </member>
+        <member name="M:PHydrate.Core.DatabaseServiceBase.ExecuteStoredProcedureReader(System.String)">
+            <summary>
+            Executes a stored procedure.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <returns>An IDataReader containing the results.</returns>
+        </member>
+        <member name="M:PHydrate.Core.DatabaseServiceBase.ExecuteStoredProcedureScalar``1(System.String)">
+            <summary>
+            Executes the stored procedure, returning the first column of the first record.
+            </summary>
+            <typeparam name="T">The type to cast the return value to.</typeparam>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.DatabaseServiceBase.ExecuteStoredProcedureScalar``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Executes the stored procedure, returning the first column of the first record.
+            </summary>
+            <typeparam name="T">The type to cast the return value to.</typeparam>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="dataParameters">The data parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.DatabaseServiceBase.GetDatabaseConnection">
+            <summary>
+            Gets the connection.
+            </summary>
+            <returns>The driver-specific connection object</returns>
+        </member>
+        <member name="M:PHydrate.Core.SqlServerDatabaseService.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Core.SqlServerDatabaseService"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+        </member>
+        <member name="M:PHydrate.Core.SqlServerDatabaseService.GetDatabaseConnection">
+            <summary>
+            Gets the connection.
+            </summary>
+            <returns>The driver-specific connection object</returns>
+        </member>
+        <member name="T:PHydrate.Attributes.StringFormatMethodAttribute">
+            <summary>
+            Indicates that marked method builds string by format pattern and (optional) arguments. 
+            Parameter, which contains format string, should be given in constructor.
+            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.StringFormatMethodAttribute.#ctor(System.String)">
+            <summary>
+            Initializes new instance of StringFormatMethodAttribute
+            </summary>
+            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
+        </member>
+        <member name="P:PHydrate.Attributes.StringFormatMethodAttribute.FormatParameterName">
+            <summary>
+            Gets format parameter name
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.CanBeNullAttribute">
+            <summary>
+            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.NotNullAttribute">
+            <summary>
+            Indicates that the value of marked element could never be <c>null</c>
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.UsedImplicitlyAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.UsedImplicitlyAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.UsedImplicitlyAttribute.#ctor(PHydrate.Attributes.ImplicitUseKindFlags,PHydrate.Attributes.ImplicitUseTargetFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">The use kind flags.</param>
+            <param name="targetFlags">The target flags.</param>
+        </member>
+        <member name="M:PHydrate.Attributes.UsedImplicitlyAttribute.#ctor(PHydrate.Attributes.ImplicitUseKindFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">The use kind flags.</param>
+        </member>
+        <member name="M:PHydrate.Attributes.UsedImplicitlyAttribute.#ctor(PHydrate.Attributes.ImplicitUseTargetFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.UsedImplicitlyAttribute"/> class.
+            </summary>
+            <param name="targetFlags">The target flags.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.UsedImplicitlyAttribute.UseKindFlags">
+            <summary>
+            Gets or sets the use kind flags.
+            </summary>
+            <value>The use kind flags.</value>
+        </member>
+        <member name="P:PHydrate.Attributes.UsedImplicitlyAttribute.TargetFlags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.MeansImplicitUseAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.MeansImplicitUseAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.MeansImplicitUseAttribute.#ctor(PHydrate.Attributes.ImplicitUseKindFlags,PHydrate.Attributes.ImplicitUseTargetFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.MeansImplicitUseAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">The use kind flags.</param>
+            <param name="targetFlags">The target flags.</param>
+        </member>
+        <member name="M:PHydrate.Attributes.MeansImplicitUseAttribute.#ctor(PHydrate.Attributes.ImplicitUseKindFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.MeansImplicitUseAttribute"/> class.
+            </summary>
+            <param name="useKindFlags">The use kind flags.</param>
+        </member>
+        <member name="M:PHydrate.Attributes.MeansImplicitUseAttribute.#ctor(PHydrate.Attributes.ImplicitUseTargetFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.MeansImplicitUseAttribute"/> class.
+            </summary>
+            <param name="targetFlags">The target flags.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.MeansImplicitUseAttribute.UseKindFlags">
+            <summary>
+            Gets or sets the use kind flags.
+            </summary>
+            <value>The use kind flags.</value>
+        </member>
+        <member name="P:PHydrate.Attributes.MeansImplicitUseAttribute.TargetFlags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.ImplicitUseKindFlags">
+            <summary>
+            The kind of implicit use that is implied.
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseKindFlags.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseKindFlags.Access">
+            <summary>
+            Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseKindFlags.Assign">
+            <summary>
+            Indicates implicit assignment to a member
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseKindFlags.Instantiated">
+            <summary>
+            Indicates implicit instantiation of a type
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.ImplicitUseTargetFlags">
+            <summary>
+            Specify what is considered used implicitly when marked with <see cref="T:PHydrate.Attributes.MeansImplicitUseAttribute"/> or <see cref="T:PHydrate.Attributes.UsedImplicitlyAttribute"/>
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseTargetFlags.Default">
+            <summary>
+            Default target is Itself
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseTargetFlags.Itself">
+            <summary>
+            Entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseTargetFlags.Members">
+            <summary>
+            Members of entity marked with attribute are considered used
+            </summary>
+        </member>
+        <member name="F:PHydrate.Attributes.ImplicitUseTargetFlags.WithMembers">
+            <summary>
+            Entity marked with attribute and all its members considered used
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.ObjectHydratorAttribute">
+            <summary>
+              Specify a custom IObjectHydrator for the class
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.ObjectHydratorAttribute.#ctor(System.Type)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.ObjectHydratorAttribute"/> class.
+            </summary>
+            <param name="hydratorType">Type of the hydrator.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.ObjectHydratorAttribute.HydratorType">
+            <summary>
+              Gets or sets the type of the hydrator.
+            </summary>
+            <value>The type of the hydrator.</value>
+        </member>
+        <member name="T:PHydrate.Util.ExpressionExtensions">
+            <summary>
+            Extension methods for Expressions
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.ExpressionExtensions.GetDataParameters``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String)">
+            <summary>
+            Gets the data parameters from an expression returning a boolean.
+            </summary>
+            <typeparam name="T">The type being acted on</typeparam>
+            <param name="expression">The expression.</param>
+            <param name="parameterPrefix">The prefix to add to each parameter name</param>
+            <returns>A list of data parameters parsed from the expression</returns>
+        </member>
+        <member name="M:PHydrate.Util.ExpressionExtensions.GetValue(System.Linq.Expressions.Expression)">
+            <summary>
+            Gets the value from an expression (invokes it).
+            </summary>
+            <param name="expression">The expression.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.Core.IDefaultObjectHydrator">
+            <summary>
+              Default hydrator implementation
+            </summary>
+        </member>
+        <member name="M:PHydrate.Core.IDefaultObjectHydrator.Hydrate``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+              Hydrates the specified object type.
+            </summary>
+            <typeparam name = "T">The type of object to hydrate</typeparam>
+            <param name = "columnValues">The column values.</param>
+            <returns>The hydrated object</returns>
+        </member>
+        <member name="T:PHydrate.Util.TypeExtensions">
+            <summary>
+            Extension methods for <see cref="N:System.Data"/>
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.GetAttribute``1(System.Type)">
+            <summary>
+            Gets a specific attribute from a type.
+            </summary>
+            <typeparam name="T">The attribute to retrieve</typeparam>
+            <param name="type">The type.</param>
+            <returns>The attribute, or null if not found.</returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.GetDefaultConstructor(System.Type)">
+            <summary>
+            Gets the default constructor.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The default constructor for the type, or null if it does not exist.</returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.ConstructUsingDefaultConstructor``1(System.Type)">
+            <summary>
+            Constructs the specified type.
+            </summary>
+            <typeparam name="T">The type to cast to on return.</typeparam>
+            <param name="type">The type.</param>
+            <returns>The constructed type.</returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.GetMembersWithAttribute``1(System.Type)">
+            <summary>
+            Gets the members with attribute.
+            </summary>
+            <typeparam name="T">The attribute</typeparam>
+            <param name="type">The type.</param>
+            <returns>An enumerable of all members of the type that have the specified attribute.</returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.ExecuteGenericMethod``2(System.Type,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Object[])">
+            <summary>
+            Executes a method on a generic type.
+            </summary>
+            <typeparam name="TSource">The type of the source object.</typeparam>
+            <typeparam name="TReturn">The type of the return value.</typeparam>
+            <param name="genericType">The generic type parameter to use when constructing the concrete instance.</param>
+            <param name="methodCall">The method call to make, including arguments.</param>
+            <param name="constructorParameters">The constructor parameters.</param>
+            <returns>The return value from the method to be called.</returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.GetMembersByName(System.Type,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets IMemberInfos for a type by name.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="memberNames">The member names.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.Core.FluentConfiguration">
+            <summary>
+            Configuration class for PHydrate
+            </summary>
+        </member>
+        <member name="M:PHydrate.Core.FluentConfiguration.Database(PHydrate.Core.IDatabaseService)">
+            <summary>
+            Specifies the database service to use.
+            </summary>
+            <param name="databaseService">The database service.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.FluentConfiguration.ParameterPrefix(System.String)">
+            <summary>
+            Specifies a string to prepend to parameter names.  Defaults to "@".
+            </summary>
+            <param name="prefix">The prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Core.FluentConfiguration.BuildSessionFactory">
+            <summary>
+            Builds the session factory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.Attributes.PrimaryKeyAttribute">
+            <summary>
+              Mark an item in a class as the primary key
+            </summary>
+        </member>
+        <member name="T:PHydrate.Attributes.DeleteUsingAttribute">
+            <summary>
+              Annotate a class with the stored procedure name used to delete an instance
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.DeleteUsingAttribute.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.DeleteUsingAttribute"/> class.
+            </summary>
+            <param name="procedureName">Name of the procedure.</param>
+        </member>
+        <member name="T:PHydrate.Util.DbCommandExtensions">
+            <summary>
+            Extensions on IDbCommand
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.DbCommandExtensions.AddParameter(System.Data.IDbCommand,System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds a parameter to the command.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:PHydrate.Util.DbCommandExtensions.AddParameter(System.Data.IDbCommand,System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Data.ParameterDirection)">
+            <summary>
+            Adds a parameter to the command with a specified direction.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="direction">The direction.</param>
+        </member>
+        <member name="M:PHydrate.Util.DbCommandExtensions.AddParameter``1(System.Data.IDbCommand,System.String,System.Data.ParameterDirection)">
+            <summary>
+            Adds a parameter to the command with a specified direction and a default value.
+            </summary>
+            <typeparam name="T">The type of the parameter</typeparam>
+            <param name="command">The command.</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="direction">The direction.</param>
+        </member>
+        <member name="T:PHydrate.Util.GenericExtensions">
+            <summary>
+            Extensions on generic types
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.GetDataParameters``1(``0,System.String)">
+            <summary>
+            Gets the data parameters from an instance.
+            </summary>
+            <param name="instance">The type.</param>
+            <param name="parameterPrefix">The parameter prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.SetPropertyValueWithAttribute``2(``0,System.Object)">
+            <summary>
+            Sets the property with attribute.
+            </summary>
+            <typeparam name="TInstance">The type of the instance.</typeparam>
+            <typeparam name="TAttributeType">The type of the attribute.</typeparam>
+            <param name="obj">The obj.</param>
+            <param name="value">The value.</param>
+            <exception cref="T:PHydrate.PHydrateException">Thrown if the member is not settable.</exception>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.GetPropertyValuesWithAttribute``1(System.Object)">
+            <summary>
+            Gets the property values with attribute.
+            </summary>
+            <typeparam name="TAttributeType">The type of the attribute to grab property values from.</typeparam>
+            <param name="obj">The object to work on.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.GetObjectsHashCodeByPrimaryKeys(System.Object)">
+            <summary>
+            Gets the objects hash code based on the type and the primary keys defined.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.GetObjectsHashCodeByFieldValues(System.Type,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Gets the objects hash code based on arbritary field values.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.ISessionFactory">
+            <summary>
+              Factory for getting ISession objects.
+            </summary>
+            <remarks>
+              This class should be instantiated as a singleton.
+            </remarks>
+        </member>
+        <member name="M:PHydrate.ISessionFactory.GetSession">
+            <summary>
+              Gets the session.
+            </summary>
+            <returns>An implementation of ISession associated with this factory.</returns>
+        </member>
+        <member name="P:PHydrate.ISessionFactory.GlobalTransaction">
+            <summary>
+              Gets the global transaction.
+            </summary>
+            <value>The global transaction.</value>
+        </member>
+        <member name="T:PHydrate.Attributes.RecordsetAttribute">
+            <summary>
+              Specify that this member is loaded from another recordset
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.RecordsetAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.RecordsetAttribute"/> class.
+            </summary>
+            <param name="recordsetNumber">The recordset number.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.RecordsetAttribute.RecordsetNumber">
+            <summary>
+            Gets the recordset number.
+            </summary>
+        </member>
+        <member name="T:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper">
+            <summary>
+            Default wrapper for MemberInfos that have no Getters or Setters
+            </summary>
+        </member>
+        <member name="T:PHydrate.Util.MemberInfoWrapper.IMemberInfo">
+            <summary>
+            Wrapper for MemberInfo derivatives
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.IMemberInfo.GetValue(System.Object)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.IMemberInfo.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:PHydrate.Util.MemberInfoWrapper.IMemberInfo.Wrapped">
+            <summary>
+            Gets the wrapped MemberInfo.
+            </summary>
+        </member>
+        <member name="P:PHydrate.Util.MemberInfoWrapper.IMemberInfo.Type">
+            <summary>
+            Gets the type of the member.
+            </summary>
+        </member>
+        <member name="F:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.MemberInfo">
+            <summary>
+            The internal MemberInfo being wrapped.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper"/> class.
+            </summary>
+            <param name="memberInfo">The member info.</param>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.GetValue(System.Object)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.Wrapped">
+            <summary>
+            Gets the wrapped MemberInfo.
+            </summary>
+        </member>
+        <member name="P:PHydrate.Util.MemberInfoWrapper.MemberInfoWrapper.Type">
+            <summary>
+            Gets the type of the member.
+            </summary>
+        </member>
+        <member name="T:PHydrate.Core.Session">
+            <summary>
+            Implementation of ISession
+            </summary>
+        </member>
+        <member name="T:PHydrate.ISession">
+            <summary>
+              A single-use session.
+            </summary>
+        </member>
+        <member name="M:PHydrate.ISession.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+              Gets an object of type <typeparamref name = "T" /> given the arguments in the query.
+            </summary>
+            <typeparam name = "T">The type of object to return.</typeparam>
+            <param name = "query">The parameters used to select the object.</param>
+            <returns>The found object, or null if not found.</returns>
+        </member>
+        <member name="M:PHydrate.ISession.Get``1(PHydrate.ISpecification{``0})">
+            <summary>
+            Gets an object of type <typeparamref name="T"/> given the specification.
+            </summary>
+            <typeparam name="T">The type of the object to return.</typeparam>
+            <param name="specification">The specification.</param>
+            <returns>The found object, or null.</returns>
+        </member>
+        <member name="M:PHydrate.ISession.Persist``1(``0)">
+            <summary>
+              Persists the specified object.
+            </summary>
+            <typeparam name = "T">The type of the object to persist.</typeparam>
+            <param name = "objectToPersist">The object to persist.</param>
+        </member>
+        <member name="M:PHydrate.ISession.Delete``1(``0)">
+            <summary>
+            Deletes the specified object from the database store.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objectToDelete">The object to delete.</param>
+        </member>
+        <member name="P:PHydrate.ISession.Transaction">
+            <summary>
+              Gets the transaction.
+            </summary>
+            <value>The transaction.</value>
+        </member>
+        <member name="M:PHydrate.Core.Session.#ctor(PHydrate.Core.IDatabaseService,PHydrate.Core.IDefaultObjectHydrator,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Core.Session"/> class.
+            </summary>
+            <param name="databaseService">The database service.</param>
+            <param name="defaultObjectHydrator">The object hydrator to use by default</param>
+            <param name="parameterPrefix">The string to prepend to parameter names</param>
+        </member>
+        <member name="M:PHydrate.Core.Session.Get``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Gets an object of type <typeparamref name="T"/> given the arguments in the query.
+            </summary>
+            <typeparam name="T">The type of object to return.</typeparam>
+            <param name="query">The parameters used to select the object.</param>
+            <returns>The found object, or null if not found.</returns>
+        </member>
+        <member name="M:PHydrate.Core.Session.Get``1(PHydrate.ISpecification{``0})">
+            <summary>
+            Gets an object of type <typeparamref name="T"/> given the specification.
+            </summary>
+            <typeparam name="T">The type of the object to return.</typeparam>
+            <param name="specification">The specification.</param>
+            <returns>The found object, or null.</returns>
+        </member>
+        <member name="M:PHydrate.Core.Session.Delete``1(``0)">
+            <summary>
+            Deletes the specified object from the database store.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objectToDelete">The object to delete.</param>
+        </member>
+        <member name="M:PHydrate.Core.Session.Persist``1(``0)">
+            <summary>
+            Persists the specified object.
+            </summary>
+            <typeparam name="T">The type of the object to persist.</typeparam>
+            <param name="objectToPersist">The object to persist.</param>
+        </member>
+        <member name="P:PHydrate.Core.Session.Transaction">
+            <summary>
+            Gets the transaction.
+            </summary>
+            <value>The transaction.</value>
+        </member>
+        <member name="T:PHydrate.Attributes.PersistAsAttribute">
+            <summary>
+            Specify the name of the column that the member uses
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.PersistAsAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Attributes.PersistAsAttribute"/> class.
+            </summary>
+            <param name="columnName">Name of the column.</param>
+        </member>
+        <member name="P:PHydrate.Attributes.PersistAsAttribute.ColumnName">
+            <summary>
+            Gets or sets the name of the column.
+            </summary>
+            <value>The name of the column.</value>
+        </member>
+        <member name="T:PHydrate.Util.MemberInfoWrapper.FieldInfoWrapper">
+            <summary>
+            Wrapper for FieldInfo types
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.FieldInfoWrapper.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Util.MemberInfoWrapper.FieldInfoWrapper"/> class.
+            </summary>
+            <param name="fieldInfo">The field info.</param>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.FieldInfoWrapper.GetValue(System.Object)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.MemberInfoWrapper.FieldInfoWrapper.SetValue(System.Object,System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="obj">The obj.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:PHydrate.Fluently">
+            <summary>
+            Entry point for PHydrate configuration
+            </summary>
+        </member>
+        <member name="P:PHydrate.Fluently.Configure">
+            <summary>
+            Gets a configuration object
+            </summary>
+        </member>
+        <member name="T:PHydrate.IExplicitSpecification`1">
+            <summary>
+            A code-based specification.
+            </summary>
+            <typeparam name="T">The type this specification accepts</typeparam>
+        </member>
+        <member name="M:PHydrate.IExplicitSpecification`1.Satisfies(`0)">
+            <summary>
+            Determine if an object satifies the specification
+            </summary>
+            <param name="obj">The object to check.</param>
+            <returns>True if the object is specified, false otherwise.</returns>
+        </member>
+        <member name="T:PHydrate.Core.SessionFactory">
+            <summary>
+            Default implementation of ISessionFactory
+            </summary>
+        </member>
+        <member name="M:PHydrate.Core.SessionFactory.#ctor(PHydrate.Core.IDatabaseService,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PHydrate.Core.SessionFactory"/> class.
+            </summary>
+            <param name="databaseService">The database service.</param>
+            <param name="parameterPrefix">The prefix to place in front of parameter names.</param>
+        </member>
+        <member name="M:PHydrate.Core.SessionFactory.GetSession">
+            <summary>
+            Gets the session.
+            </summary>
+            <returns>
+            An implementation of ISession associated with this factory.
+            </returns>
+        </member>
+        <member name="P:PHydrate.Core.SessionFactory.GlobalTransaction">
+            <summary>
+            Gets the global transaction.
+            </summary>
+            <value>The global transaction.</value>
+        </member>
+        <member name="T:PHydrate.Attributes.UpdateUsingAttribute">
+            <summary>
+              Annotate a class with the stored procedure name used to update a record.
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.UpdateUsingAttribute.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.UpdateUsingAttribute"/> class.
+            </summary>
+            <param name="procedureName">Name of the procedure.</param>
+        </member>
+        <member name="T:PHydrate.Util.MemberInfoWrapper.PropertyInfoWrapper">
+            <summary>
+            Wrapper for PropertyInfo types
+            </summary>
+        </member>
+        <member name="T:PHydrate.IObjectHydrator`1">
+            <summary>
+              Classes with the ability to hydrate an object of type <typeparamref name = "T" />.
+            </summary>
+            <typeparam name = "T">The type this class knows how to hydrate.</typeparam>
+        </member>
+        <member name="M:PHydrate.IObjectHydrator`1.Hydrate(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+              Hydrates the object of type <typeparamref name = "T" />.
+            </summary>
+            <param name = "columnValues">The column values from the database.</param>
+            <returns>The hydrated object</returns>
+        </member>
+        <member name="T:PHydrate.IDbSpecification`1">
+            <summary>
+            Database criteria for a type
+            </summary>
+            <typeparam name="T">The type this specification accepts</typeparam>
+        </member>
+        <member name="P:PHydrate.IDbSpecification`1.Criteria">
+            <summary>
+            Gets the criteria.
+            </summary>
+            <value>The criteria.</value>
+        </member>
+        <member name="T:PHydrate.Util.DictionaryExtensions">
+            <summary>
+            Extension methods on IDictionary&lt;TKEY, TVALUE&gt;
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.DictionaryExtensions.ContainsKeyNoCase``1(System.Collections.Generic.IDictionary{System.String,``0},System.String,System.String@)">
+            <summary>
+            Case insensitive version of ContainsKey.
+            </summary>
+            <typeparam name="T">The type of the object values</typeparam>
+            <param name="dictionary">The dictionary.</param>
+            <param name="key">The key.</param>
+            <param name="actualName">The actual name.</param>
+            <returns>
+            	<c>true</c> if the dictionary contains the key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:PHydrate.Util.ConstructorInfoExtensions">
+            <summary>
+              Extensions on ConstructorInfo
+            </summary>
+        </member>
+        <member name="M:PHydrate.Util.ConstructorInfoExtensions.MatchesParameters(System.Reflection.ConstructorInfo,System.Collections.Generic.IList{System.Object})">
+            <summary>
+              Returns true if the constructor's parameters matches the parameters passed in.
+            </summary>
+            <param name = "ci">The ci.</param>
+            <param name = "constructorParameters">The constructor parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PHydrate.ITransaction">
+            <summary>
+              Represents a database transaction.
+            </summary>
+        </member>
+        <member name="M:PHydrate.ITransaction.Begin">
+            <summary>
+              Begins this transaction.
+            </summary>
+        </member>
+        <member name="M:PHydrate.ITransaction.Commit">
+            <summary>
+              Commits this transaction.
+            </summary>
+        </member>
+        <member name="M:PHydrate.ITransaction.Rollback">
+            <summary>
+              Rolls back this transaction.
+            </summary>
+        </member>
+        <member name="T:PHydrate.Core.DefaultObjectHydrator">
+            <summary>
+              Default hydrator
+            </summary>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+                            </param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+                            </exception>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. 
+                            </exception>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains a specific value.
+            </summary>
+            <returns>
+            true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+            </returns>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+                            </param>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.CopyTo(System.Object[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.
+                            </param><param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.
+                            </param><exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.
+                            </exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.
+                            </exception><exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional.
+                                -or-
+                            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+                                -or-
+                                The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.
+                            </exception>
+        </member>
+        <member name="M:PHydrate.Core.WeakReferenceObjectCache.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <returns>
+            true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </returns>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+                            </param><exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+                            </exception>
+        </member>
+        <member name="P:PHydrate.Core.WeakReferenceObjectCache.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </returns>
+        </member>
+        <member name="P:PHydrate.Core.WeakReferenceObjectCache.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
+            </summary>
+            <returns>
+            true if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:PHydrate.Attributes.HydrateUsingAttribute">
+            <summary>
+              Annotate a class with the stored procedure used to get an object
+            </summary>
+        </member>
+        <member name="M:PHydrate.Attributes.HydrateUsingAttribute.#ctor(System.String)">
+            <summary>
+              Initializes a new instance of the <see cref="T:PHydrate.Attributes.HydrateUsingAttribute"/> class.
+            </summary>
+            <param name="procedureName">Name of the procedure.</param>
+        </member>
+    </members>
+</doc>
