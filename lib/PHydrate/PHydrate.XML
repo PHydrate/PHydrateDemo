@@ -431,6 +431,7 @@
             <typeparam name="T">The type to cast to on return.</typeparam>
             <param name="type">The type.</param>
             <returns>The constructed type.</returns>
+            <exception cref="T:PHydrate.PHydrateException">Unable to construct object {0}, no default constructor.</exception>
         </member>
         <member name="M:PHydrate.Util.TypeExtensions.GetMembersWithAttribute``1(System.Type)">
             <summary>
@@ -450,6 +451,10 @@
             <param name="methodCall">The method call to make, including arguments.</param>
             <param name="constructorParameters">The constructor parameters.</param>
             <returns>The return value from the method to be called.</returns>
+            <exception cref="T:PHydrate.PHydrateInternalException">Lambda does not contain a method call.</exception>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.ExecuteGenericMethod``2(System.Type,System.String,System.Object[],System.Object[])">
+            <exception cref="T:PHydrate.PHydrateInternalException">Type {0} is not a generic type</exception>
         </member>
         <member name="M:PHydrate.Util.TypeExtensions.GetMembersByName(System.Type,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
@@ -457,6 +462,13 @@
             </summary>
             <param name="type">The type.</param>
             <param name="memberNames">The member names.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.TypeExtensions.GetSettableMembers(System.Type)">
+            <summary>
+            Gets the settable members (properties and fields).
+            </summary>
+            <param name="type">The type.</param>
             <returns></returns>
         </member>
         <member name="T:PHydrate.Core.FluentConfiguration">
@@ -573,6 +585,13 @@
             </summary>
             <param name="type">The type.</param>
             <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.DbNullToNull(System.Object)">
+            <summary>
+            Returns null if the object is DbNull, else returns the object.
+            </summary>
+            <param name="obj">The obj.</param>
             <returns></returns>
         </member>
         <member name="T:PHydrate.ISessionFactory">
@@ -956,6 +975,25 @@
             <summary>
               Default hydrator
             </summary>
+        </member>
+        <member name="M:PHydrate.Core.DefaultObjectHydrator.Hydrate``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Hydrates the specified object type.
+            </summary>
+            <typeparam name="T">The type of object to hydrate</typeparam>
+            <param name="columnValues">The column values.</param>
+            <returns>
+            The hydrated object
+            </returns>
+        </member>
+        <member name="M:PHydrate.Core.DefaultObjectHydrator.GetObject``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets the object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="columnValues">The column values.</param>
+            <returns></returns>
+            <exception cref="T:PHydrate.PHydrateException">Could not find constructor for hydration of object {0}</exception>
         </member>
         <member name="M:PHydrate.Core.WeakReferenceObjectCache.GetEnumerator">
             <summary>
