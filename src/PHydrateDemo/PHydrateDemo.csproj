@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PHydrate, Version=0.1.0.24070, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PHydrate, Version=0.1.0.29832, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\PHydrate\PHydrate.dll</HintPath>
     </Reference>

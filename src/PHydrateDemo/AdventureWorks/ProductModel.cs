@@ -6,7 +6,7 @@ namespace PHydrateDemo.AdventureWorks
     public class ProductModel
     {
         [PrimaryKey]
-        public int ProductModeId { get; set; }
+        public int ProductModelId { get; set; }
 
         public string Name { get; set; }
 

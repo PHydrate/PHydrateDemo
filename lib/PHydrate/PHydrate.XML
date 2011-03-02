@@ -587,12 +587,23 @@
             <param name="values">The values.</param>
             <returns></returns>
         </member>
-        <member name="M:PHydrate.Util.GenericExtensions.DbNullToNull(System.Object)">
+        <member name="M:PHydrate.Util.GenericExtensions.DbNullToDefault``1(``0)">
             <summary>
             Returns null if the object is DbNull, else returns the object.
             </summary>
             <param name="obj">The obj.</param>
             <returns></returns>
+        </member>
+        <member name="M:PHydrate.Util.GenericExtensions.ExecuteGenericMethod``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Type)">
+            <summary>
+            Executes the generic method.
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <param name="obj">The obj.</param>
+            <param name="methodCall">The method call.</param>
+            <param name="type">The type.</param>
+            <returns></returns>
+            <exception cref="T:PHydrate.PHydrateInternalException">Lambda does not contain a method call.</exception>
         </member>
         <member name="T:PHydrate.ISessionFactory">
             <summary>
@@ -761,6 +772,9 @@
             <param name="query">The parameters used to select the object.</param>
             <returns>The found object, or null if not found.</returns>
         </member>
+        <member name="M:PHydrate.Core.Session.GetCrudAttributeFromType``2">
+            <exception cref="T:PHydrate.PHydrateException">Unable to process object of type {0}.  Define a stored procedure with [{0}]</exception>
+        </member>
         <member name="M:PHydrate.Core.Session.Get``1(PHydrate.ISpecification{``0})">
             <summary>
             Gets an object of type <typeparamref name="T"/> given the specification.
@@ -775,6 +789,7 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="objectToDelete">The object to delete.</param>
+            <exception cref="T:PHydrate.PHydrateException">Delete of object failed.</exception>
         </member>
         <member name="M:PHydrate.Core.Session.Persist``1(``0)">
             <summary>
@@ -782,6 +797,9 @@
             </summary>
             <typeparam name="T">The type of the object to persist.</typeparam>
             <param name="objectToPersist">The object to persist.</param>
+        </member>
+        <member name="M:PHydrate.Core.Session.UpdateObject``1(``0)">
+            <exception cref="T:PHydrate.PHydrateException">Update of object failed.</exception>
         </member>
         <member name="P:PHydrate.Core.Session.Transaction">
             <summary>
@@ -985,6 +1003,10 @@
             <returns>
             The hydrated object
             </returns>
+            <exception cref="T:PHydrate.PHydrateException">Unable to populate Primary Key values for {0}</exception>
+        </member>
+        <member name="M:PHydrate.Core.DefaultObjectHydrator.PopulateInnerObjects``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{PHydrate.Util.MemberInfoWrapper.IMemberInfo})">
+            <exception cref="T:PHydrate.PHydrateException">Unable to populate Primary Key values for {0}</exception>
         </member>
         <member name="M:PHydrate.Core.DefaultObjectHydrator.GetObject``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
