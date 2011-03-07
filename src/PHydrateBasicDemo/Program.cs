@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
+using AdventureWorksLib;
 using PHydrate;
 using PHydrate.Core;
-using PHydrateDemo.AdventureWorks;
 
 namespace PHydrateDemo
 {

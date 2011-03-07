@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHydrateBasicDemo", "PHydrateBasicDemo\PHydrateBasicDemo.csproj", "{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorksLib", "AdventureWorksLib\AdventureWorksLib.csproj", "{CA1DBCCF-46B7-4A0C-A6CB-CB0E5917E34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHydrateSpecificationDemo", "PHydrateSpecificationDemo\PHydrateSpecificationDemo.csproj", "{4C38FA5A-267E-4822-8E9B-5A126F204F99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1DBCCF-46B7-4A0C-A6CB-CB0E5917E34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1DBCCF-46B7-4A0C-A6CB-CB0E5917E34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1DBCCF-46B7-4A0C-A6CB-CB0E5917E34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1DBCCF-46B7-4A0C-A6CB-CB0E5917E34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C38FA5A-267E-4822-8E9B-5A126F204F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C38FA5A-267E-4822-8E9B-5A126F204F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C38FA5A-267E-4822-8E9B-5A126F204F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C38FA5A-267E-4822-8E9B-5A126F204F99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

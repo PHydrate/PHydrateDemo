@@ -34,6 +34,11 @@ BEGIN
 	DECLARE @ProductId INT
 	DECLARE @ProductCategoryId INT
 	DECLARE @ProductModelId INT
+	DECLARE @ProductTable TABLE
+	       (ProductId INT NOT NULL
+	       ,ProductCategoryId INT NOT NULL
+	       ,ProductModelId INT NOT NULL
+	       )
 
     -- Insert statements for procedure here
 	IF (@ProductNumber IS NOT NULL)
@@ -44,21 +49,27 @@ BEGIN
     END
 	ELSE BEGIN
 		IF (@Name IS NOT NULL)
-			SELECT @ProductId = ProductID, @ProductCategoryId = ProductCategoryID, @ProductModelId = ProductModelID
+		    INSERT INTO @ProductTable
+			SELECT ProductID, ProductCategoryID, ProductModelID
 			  FROM AdventureWorksLT2008.SalesLT.Product
 			 WHERE Name like @Name
 		ELSE
-			SELECT @ProductId = NULL, @ProductCategoryId = NULL, @ProductModelId = NULL
+		    INSERT INTO @ProductTable
+			SELECT ProductID, ProductCategoryId, ProductModelId
+			  FROM AdventureWorksLT2008.SalesLT.Product
 	END
 	
 	SELECT * FROM AdventureWorksLT2008.SalesLT.Product
 	 WHERE ProductID = @ProductId
+	    OR ProductID IN (SELECT ProductID FROM @ProductTable)
 	 
 	SELECT * FROM AdventureWorksLT2008.SalesLT.ProductCategory
 	 WHERE ProductCategoryID = @ProductCategoryId
+	    OR ProductCategoryID IN (SELECT ProductCategoryID FROM @ProductTable)
 	 
 	SELECT * FROM AdventureWorksLT2008.SalesLT.ProductModel
 	 WHERE ProductModelID = @ProductModelId
+	    OR ProductModelID IN (SELECT ProductModelID FROM @ProductTable)
 END
 
 GO

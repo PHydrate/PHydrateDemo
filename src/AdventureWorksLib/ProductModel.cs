@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using PHydrate.Attributes;
 
-namespace PHydrateDemo.AdventureWorks
+namespace AdventureWorksLib
 {
     public class ProductModel
     {
