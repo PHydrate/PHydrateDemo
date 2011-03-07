@@ -47,6 +47,9 @@ namespace PHydrateSpecificationDemo
 
             foreach (Product p in products)
                 Console.WriteLine(p.ToString());
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
