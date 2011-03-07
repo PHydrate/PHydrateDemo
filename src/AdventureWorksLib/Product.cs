@@ -5,43 +5,43 @@ namespace AdventureWorksLib
 {
     [HydrateUsing("GetProduct")]
     //[AggregateRoot]
-    public class Product
+    public class Product : PropertyStringOutput
     {
         [PrimaryKey]
-        public int ProductId { get; set; }
+        public int ProductId { get; private set; }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public string ProductNumber { get; set; }
+        public string ProductNumber { get; private set; }
 
-        public string Color { get; set; }
+        public string Color { get; private set; }
 
-        public decimal StandardCost { get; set; }
+        public decimal StandardCost { get; private set; }
 
-        public decimal ListPrice { get; set; }
+        public decimal ListPrice { get; private set; }
 
-        public string Size { get; set; }
+        public string Size { get; private set; }
 
-        public decimal? Weight { get; set; }
+        public decimal? Weight { get; private set; }
 
         [Recordset(1)]
-        public ProductCategory ProductCategory { get; set; }
+        public ProductCategory ProductCategory { get; private set; }
 
         [Recordset(2)]
-        public ProductModel ProductModel { get; set; }
+        public ProductModel ProductModel { get; private set; }
 
-        public DateTime SellStartDate { get; set; }
+        public DateTime SellStartDate { get; private set; }
 
-        public DateTime? SellEndDate { get; set; }
+        public DateTime? SellEndDate { get; private set; }
 
-        public DateTime? DiscontinuedDate { get; set; }
+        public DateTime? DiscontinuedDate { get; private set; }
 
         // public Stream ThumbNailPhoto {get ;set; }
 
-        public string ThumbnailPhotoFileName { get; set; }
+        public string ThumbnailPhotoFileName { get; private set; }
 
-        public Guid Rowguid { get; set; }
+        public Guid Rowguid { get; private set; }
 
-        public DateTime ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; private set; }
     }
 }

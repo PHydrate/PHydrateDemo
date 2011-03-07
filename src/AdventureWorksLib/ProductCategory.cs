@@ -3,7 +3,7 @@ using PHydrate.Attributes;
 
 namespace AdventureWorksLib
 {
-    public class ProductCategory
+    public class ProductCategory : PropertyStringOutput
     {
         [PrimaryKey]
         public int ProductCategoryId { get; set; }
