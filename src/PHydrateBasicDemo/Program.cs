@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
+using AdventureWorksLib;
 using PHydrate;
 using PHydrate.Core;
-using PHydrateDemo.AdventureWorks;
 
 namespace PHydrateDemo
 {
@@ -23,6 +23,9 @@ namespace PHydrateDemo
             Product product = session.Get<Product>(x => x.ProductNumber == "FR-R92B-58").FirstOrDefault();
 
             Console.WriteLine(product.ToString());
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
