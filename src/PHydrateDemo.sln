@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHydrateDemo.Specs", "PHydrateDemo.Specs\PHydrateDemo.Specs.csproj", "{19C9E7F6-D615-405E-8C44-D49CC146B4F2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHydrateDemo", "PHydrateDemo\PHydrateDemo.csproj", "{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHydrateBasicDemo", "PHydrateBasicDemo\PHydrateBasicDemo.csproj", "{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19C9E7F6-D615-405E-8C44-D49CC146B4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19C9E7F6-D615-405E-8C44-D49CC146B4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19C9E7F6-D615-405E-8C44-D49CC146B4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19C9E7F6-D615-405E-8C44-D49CC146B4F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11FCC3E7-9CEA-46B8-8572-D5C4E6E2C005}.Release|Any CPU.ActiveCfg = Release|Any CPU
