@@ -6,14 +6,14 @@ namespace AdventureWorksLib
     public class ProductModel : PropertyStringOutput
     {
         [PrimaryKey]
-        public int ProductModelId { get; set; }
+        private int ProductModelId { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public string CatalogDescription { get; set; }
+        public string CatalogDescription { get; private set; }
 
         public Guid Rowguid { get; set; }
 
-        public DateTime ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; private set; }
     }
 }

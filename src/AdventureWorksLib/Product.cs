@@ -8,7 +8,7 @@ namespace AdventureWorksLib
     public class Product : PropertyStringOutput
     {
         [PrimaryKey]
-        public int ProductId { get; private set; }
+        private int ProductId { get; set; }
 
         public string Name { get; private set; }
 
